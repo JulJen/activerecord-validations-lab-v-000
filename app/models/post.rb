@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
         errors.add(:title, "not clickbait-y")
       # elsif self.title.match(b)
         # return true
-      # end
+      end
     end
   end
 
