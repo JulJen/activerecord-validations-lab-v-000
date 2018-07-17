@@ -10,8 +10,6 @@ class Post < ActiveRecord::Base
     if self.title
       unless !self.title.nil? || self.title.match(b)
         errors.add(:title, "clickbait")
-      else
-        return true
       end
     end
   end
