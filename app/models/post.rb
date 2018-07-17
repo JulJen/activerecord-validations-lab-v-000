@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
 #add a custom validator to Post that ensures the title is sufficiently clickbait-y
   def is_clickbait?
-    bait = [/Won't Believe/i, /Secret/i, /Top [0-9]*/i, /Guess/i]
+    bait = [/Won't Believe/i, /Secret/i, /Top/i, /Guess/i]
     bait.each do |b|
       if self.title.nil? || !self.title.match(b)
         errors.add(:title, "clickbait")
