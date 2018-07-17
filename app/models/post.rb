@@ -11,6 +11,7 @@ class Post < ActiveRecord::Base
     bait.each do |b|
       if self.title.nil? || !self.title.match(b)
         errors.add(:title, "clickbait")
+      end
     end
   end
 
