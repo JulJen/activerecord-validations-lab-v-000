@@ -5,9 +5,9 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction Non-Fiction)}
   validate :is_clickbait?
 
-  def is_clickbait?
-    clickbait = [/Won't Believe/, /Secret/, /Top/, /Guess/]
-    if clickbait.empty? { |}
-  end
+  # def is_clickbait?
+  #   clickbait = [/Won't Believe/, /Secret/, /Top/, /Guess/]
+  #   if clickbait.empty? { |}
+  # end
 
 end
