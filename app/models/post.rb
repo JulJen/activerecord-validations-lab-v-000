@@ -7,11 +7,11 @@ class Post < ActiveRecord::Base
 
   def is_clickbait?
     bait = [/Won't Believe/, /Secret/, /Top/, /Guess/]
-    if self.title
-      unless !self.title.nil? || self.title.match(bait)
+    bait.each do |b|
+      if !self.title.match(b) || self.title.nil? 
         errors.add(:title, "clickbait")
       else
-        return false
+        return true
       end
     end
   end
