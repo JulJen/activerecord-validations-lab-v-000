@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
     bait = [/Won't Believe/, /Secret/, /Top/, /Guess/]
     bait.each do |b|
       if self.title.match(b) || self.title.nil?
-        errors.add(:title, "clickbait")
+        errors.add(:title, "clickbait-y")
       else
         return true
       end
