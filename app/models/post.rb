@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   validate :is_clickbait?
 
 #add a custom validator to Post that ensures the title is sufficiently clickbait-y
+#If the title does not contain "Won't Believe", "Secret", "Top [number]", or "Guess", the validator should return false.
   def is_clickbait?
     bait = [/Won't Believe/i, /Secret/i, /Top/i, /Guess/i]
     bait.each do |b|
