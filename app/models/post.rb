@@ -13,9 +13,9 @@ class Post < ActiveRecord::Base
       if !self.title.match(b)
         # self.title.nil? || !self.title.match(b)
         errors.add(:title, "not clickbait-y")
-      # elsif self.title.match(b)
-        # return true
-      end
+      elsif self.title.match(b)
+        return true
+      # end
     end
   end
 
