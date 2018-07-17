@@ -5,4 +5,8 @@ class Post < ActiveRecord::Base
   validates :category, presence: true
   validate :is_clickbait?
 
+  def is_clickbait?
+    clickbait = [/Won't Believe/, /Secret/, /Top/, /Guess/]
+  end
+
 end
